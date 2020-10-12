@@ -1,18 +1,30 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+
+function Hello (){
+  return <h1> say hello!</h1>
+}
+
+function Greeting ({age, name}){
+  const message = age
+  ? `you are ${age}`
+   : `I do not know how old are you`
+  return <div>
+  < Hello/>
+  <p>this is your name: {name}!</p>
+  <p>and this is your age: {message}</p>
+  </div>
+}
+
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Buna ziua!!!
-        </p>
-      </header>
-    </div>
-  );
+      <div> 
+      < Greeting name= "david"  age={30}/>
+      < Greeting name="andreea"/>
+      < Greeting name= "mika"  age={4}/>
+      </div>
+  )
 }
 
 export default App;
